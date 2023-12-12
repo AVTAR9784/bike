@@ -9535,8 +9535,8 @@ p,
   }
 }
 
-.jumbotron {
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../img/header.jpg);
+.jumbotron { height: 70vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/cargo.png);
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
