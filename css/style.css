@@ -9535,8 +9535,9 @@ p,
   }
 }
 
-.jumbotron { height: 70vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/cargo.png);
+.jumbotron { height: 90vh;
+ 
+  background:  url(../img/home1.png);
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -9702,3 +9703,18 @@ p,
 
 
 /* faq end */
+@media (max-width: 668px) {
+ .logo{
+  width: 100px;
+ }
+ .logo-title{
+  font-size: 6px;
+ }
+ .jumbotron { height: 60vh;
+ 
+
+}
+.jumbotron h3{
+  font-size: 16px;
+}
+}
