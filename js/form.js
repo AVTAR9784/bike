@@ -1,28 +1,41 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.querySelector('.contact-form');
-    const errorMessage = document.querySelector('.error-message');
+    // Get the form element
+    const form = document.querySelector('.form-validate');
 
-    form.addEventListener('submit', function (event) {
-        const inputs = form.querySelectorAll('input, textarea');
+    // Function to validate the form
+    function validateForm(event) {
+        // Prevent the form from submitting by default
+        event.preventDefault();
 
-        let isEmpty = false;
-        let errorText = '';
+        // Get the form fields
+        const name = form.querySelector('[name="yourname"]');
+        const email = form.querySelector('[name="email"]');
+        const mobile = form.querySelector('[name="Mobile_no"]');
+        const service = form.querySelector('[name="service_request"]');
 
-        inputs.forEach(function (input) {
-            if (input.required && input.value.trim() === '') {
-                isEmpty = true;
-                input.classList.add('error');
-                errorText = 'Please fill in all required fields.';
-            } else {
-                input.classList.remove('error');
-            }
-        });
-
-        if (isEmpty) {
-            event.preventDefault(); // Prevent form submission if fields are empty
-            errorMessage.textContent = errorText; // Display error message
-        } else {
-            errorMessage.textContent = ''; // Clear error message if no errors
+        // Check if fields are empty
+        if (name.value.trim() === '') {
+            alert('Please enter your name');
+            return;
         }
-    });
-});
+
+        if (email.value.trim() === '') {
+            alert('Please enter your email');
+            return;
+        }
+
+        if (mobile.value.trim() === '') {
+            alert('Please enter your mobile number');
+            return;
+        }
+
+        if (service.value === 'Select A Service') {
+            alert('Please select a service');
+            return;
+        }
+
+        // If all validations pass, submit the form
+        form.submit();
+    }
+
+    // Add event listener for form submission
+    form.addEventListener('submit', validateForm);
