@@ -151,7 +151,7 @@
                 <div class="col-lg-5">
                     <div class="bg-primary py-5 px-4 px-sm-5">
                         <div class="error-message" style="color: rgb(255, 255, 255); margin-top: 10px; text-align: center;"></div> 
-                        <form name="query" method="POST" data-netlify="true"  class="contact-form form-validate" novalidate="novalidate" class="py-5">
+                        <form id="get_quote" onsubmit="return validateForm('get_quote')"  name="query" method="POST" data-netlify="true"  class="contact-form " novalidate="novalidate" class="py-5">
                             <div class="form-group">
                                 <input type="text" class="form-control border-0 p-4" name="yourname" placeholder="Your Name" required="required" />
                             </div>
@@ -423,8 +423,8 @@
         </div>
         <div class="modal-body">
           <!-- Your form content goes here -->
-          <form name="Meeting" method="POST" data-netlify="true"  class="contact-form form-validate" novalidate="novalidate" >
-           
+          <form  id="Meetingform" name="Meeting" method="POST" data-netlify="true"  class="contact-form " novalidate="novalidate" onsubmit="return validateForm('Meetingform')" >
+          
             <div class="form-group">
                 <input type="text" class="form-control  border p-4" name="yourname" placeholder="Your Name" required="required" />
             </div>
