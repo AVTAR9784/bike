@@ -9,8 +9,15 @@ function validateForm(formId) {
   });
 
   // Validating each field
-  inputs.forEach(function(input) {
-    if (input.hasAttribute('required') && input.value.trim() === '') {
+  var requiredInputs = form.querySelectorAll('[required]');
+  requiredInputs.forEach(function(input) {
+    if (input.type === 'radio') {
+      var radioGroup = form.querySelectorAll('[name="' + input.name + '"]:checked');
+      if (radioGroup.length === 0) {
+        input.classList.add('is-invalid');
+        isValid = false;
+      }
+    } else if (input.value.trim() === '') {
       input.classList.add('is-invalid');
       isValid = false;
     }
@@ -18,7 +25,7 @@ function validateForm(formId) {
 
   if (!isValid) {
     // If the form is invalid, prevent submission
-    event.preventDefault(); // Prevents form submission
+    event.preventDefault();
     return false;
   }
 
