@@ -245,68 +245,30 @@
             <div class="form-group">
                 <input type="text" class="form-control border p-4" name="Mobile_no" placeholder="Your Mobile number" required="required" />
             </div>
-          
             <div class="form-group">
-                <label for="services" class="text-dark ">What services are you looking for?</label>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="services" id="sea-freight">
-                  <label class="form-check-label" for="sea-freight">
-                    Sea freight - Import/Export
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="services" id="air-freight">
-                  <label class="form-check-label" for="air-freight">
-                    Air freight - Import/Export
-                  </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="services" id="LCL/Consolidation">
-                    <label class="form-check-label" for="LCL/Consolidation">
-                        LCL/Consolidation- import/export
-
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="services" id="Custom_clearance">
-                    <label class="form-check-label" for="Custom_clearance">
-                        Custom clearance
-
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="services" id="Transportation">
-                    <label class="form-check-label" for="Transportation">
-                        Transportation
-
-                    </label>
-                  </div>
-              </div>
-              <div class="form-group">
-                <label for="Meeting_type " class="text-dark ">How would you like to meet?
-                </label>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="Meeting_type" id="office">
-                  <label class="form-check-label" for="office">
-                    At our office
-
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="Meeting_type" id="video_call">
-                  <label class="form-check-label" for="video_call">
-                    Video call
-                  </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="Meeting_type" id="Phone_call">
-                    <label class="form-check-label" for="Phone_call">
-                        Phone call
-
-                    </label>
-                  </div>
+                <select class="custom-select border px-4" name="service_request" style="height: 47px;">
+                    <option selected>What services are you looking for?</option>
+                    <option value="Sea_Freight"> Sea freight - Import/Export</option>
+                    <option value="Air_freight">Air freight - Import/Export</option>
+                    <option value="LCL/Consolidation">LCL/Consolidation- import/export</option>
+               
+                    <option value="Customs_clearance">Customs clearance</option>
+                    <option value="Transportation">Transportation</option>
+          
+                </select>
+            </div>
+            <div class="form-group">
+                <select class="custom-select border px-4" name="Meeting_option" style="height: 47px;">
+                    <option selected>How would you like to meet?</option>
+                    <option value="office">   At our office</option>
+                    <option value="Video">     Video call</option>
+                    <option value="Phone">    Phone call</option>
+               
                  
-              </div>
+          
+                </select>
+            </div>
+      
             <!-- Add more form fields as needed -->
             <button type="submit" name="submit" class="btn btn-primary">Submit</button>
           </form>

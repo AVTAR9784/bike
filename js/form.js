@@ -11,15 +11,16 @@ function validateForm(formId) {
   // Validating each field
   var requiredInputs = form.querySelectorAll('[required]');
   requiredInputs.forEach(function(input) {
-    if (input.type === 'radio') {
-      var radioGroup = form.querySelectorAll('[name="' + input.name + '"]:checked');
-      if (radioGroup.length === 0) {
+    if (input.type === 'select-one') {
+      if (input.value.trim() === '') {
         input.classList.add('is-invalid');
         isValid = false;
       }
-    } else if (input.value.trim() === '') {
-      input.classList.add('is-invalid');
-      isValid = false;
+    } else if (input.type === 'text' || input.type === 'email') {
+      if (input.value.trim() === '') {
+        input.classList.add('is-invalid');
+        isValid = false;
+      }
     }
   });
 
